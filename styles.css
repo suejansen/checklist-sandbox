@@ -142,6 +142,10 @@ h1 {
   padding-top: 32px;
 }
 
+.checklist-section + .checklist-section {
+  margin-top: 64px;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -164,6 +168,15 @@ h1 {
 
 .checklist-header h1 {
   font-size: clamp(2.5rem, 12vw, 4.5rem);
+}
+
+.checklist-header h2 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(2rem, 9vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
 .progress-summary {
