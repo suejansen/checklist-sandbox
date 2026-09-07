@@ -27,15 +27,36 @@
       <ul class="task-list" id="task-list">
         <li class="task-item">
           <input class="task-checkbox" type="checkbox" id="task-1" />
-          <label for="task-1">Set a moving budget</label>
+          <div class="task-content">
+            <button class="task-toggle" type="button" aria-expanded="false" aria-controls="details-1"><span>Set a moving budget</span><span class="task-chevron" aria-hidden="true"></span></button>
+            <div class="task-details" id="details-1" hidden>
+              <p>Consider moving company or truck rental costs, packing supplies, cleaning costs, deposits, temporary accommodation if needed, and a contingency amount.</p>
+              <label class="note-label" for="note-1">Add a note</label>
+              <textarea id="note-1" rows="2" placeholder="Type a note..."></textarea>
+            </div>
+          </div>
         </li>
         <li class="task-item">
           <input class="task-checkbox" type="checkbox" id="task-2" />
-          <label for="task-2">Research and book a moving company</label>
+          <div class="task-content">
+            <button class="task-toggle" type="button" aria-expanded="false" aria-controls="details-2"><span>Research and book a moving company</span><span class="task-chevron" aria-hidden="true"></span></button>
+            <div class="task-details" id="details-2" hidden>
+              <p>Compare multiple quotes, check reviews, confirm insurance coverage, and check cancellation or rescheduling policies.</p>
+              <label class="note-label" for="note-2">Add a note</label>
+              <textarea id="note-2" rows="2" placeholder="Type a note..."></textarea>
+            </div>
+          </div>
         </li>
         <li class="task-item">
           <input class="task-checkbox" type="checkbox" id="task-3" />
-          <label for="task-3">Sort through belongings and declutter</label>
+          <div class="task-content">
+            <button class="task-toggle" type="button" aria-expanded="false" aria-controls="details-3"><span>Sort through belongings and declutter</span><span class="task-chevron" aria-hidden="true"></span></button>
+            <div class="task-details" id="details-3" hidden>
+              <p>Decide what to keep, donate, sell, recycle, or dispose of before paying to move it.</p>
+              <label class="note-label" for="note-3">Add a note</label>
+              <textarea id="note-3" rows="2" placeholder="Type a note..."></textarea>
+            </div>
+          </div>
         </li>
       </ul>
     </main>

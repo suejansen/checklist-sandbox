@@ -26,3 +26,13 @@ function updateChecklist() {
 taskList.querySelectorAll(".task-checkbox").forEach((checkbox) => {
   checkbox.addEventListener("change", updateChecklist);
 });
+
+taskList.querySelectorAll(".task-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const details = document.querySelector(`#${toggle.getAttribute("aria-controls")}`);
+    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+
+    toggle.setAttribute("aria-expanded", String(!isExpanded));
+    details.hidden = isExpanded;
+  });
+});
