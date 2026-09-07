@@ -1,3 +1,15 @@
+const movingHouseStorageKey = "checklistSandboxMovingHouseTasks";
+const savedTaskIds = JSON.parse(localStorage.getItem(movingHouseStorageKey) || "[]");
+
+document.querySelectorAll(".task-checkbox").forEach((checkbox) => {
+  checkbox.checked = savedTaskIds.includes(checkbox.id);
+});
+
+function saveMovingHouseProgress() {
+  const completedTaskIds = [...document.querySelectorAll(".task-checkbox:checked")].map((checkbox) => checkbox.id);
+  localStorage.setItem(movingHouseStorageKey, JSON.stringify(completedTaskIds));
+}
+
 document.querySelectorAll(".checklist-section").forEach((section) => {
   const taskList = section.querySelector(".task-list");
   const progressBar = section.querySelector(".progress-bar");
@@ -25,7 +37,10 @@ document.querySelectorAll(".checklist-section").forEach((section) => {
   }
 
   taskList.querySelectorAll(".task-checkbox").forEach((checkbox) => {
-    checkbox.addEventListener("change", updateChecklist);
+    checkbox.addEventListener("change", () => {
+      updateChecklist();
+      saveMovingHouseProgress();
+    });
   });
 
   taskList.querySelectorAll(".task-toggle").forEach((toggle) => {
@@ -37,4 +52,6 @@ document.querySelectorAll(".checklist-section").forEach((section) => {
       details.hidden = isExpanded;
     });
   });
+
+  updateChecklist();
 });
